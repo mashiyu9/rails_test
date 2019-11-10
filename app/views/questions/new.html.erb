@@ -1,6 +1,12 @@
 <h1>お問い合わせページ</h1>
 <%= notice %>
 <%= form_with(model: @question, local: true ) do |form| %>
+<% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @question.errors.count %>件のエラーがあります。</h2>
+    </div>
+  <% end %>
+
 
   <div class="blog_title">
     <%= form.label :name %>
