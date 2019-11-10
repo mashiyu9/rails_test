@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  get    '/questions'          ,to: 'questions#new'
+  resources :questions do 
+  end
   resources :blogs do 
     collection do 
       post :confirm
