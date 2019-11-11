@@ -46,6 +46,7 @@ class BlogsController < ApplicationController
     # binding.pry
     # if Blog.find(params[:id]).invalid?
       @blog = Blog.new(blog_params)
+      @blog.id = params[:id]
       render :new if @blog.invalid?
     #else 
     # @blog = Blog.find(params[:id])

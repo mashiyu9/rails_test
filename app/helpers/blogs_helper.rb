@@ -7,12 +7,23 @@ module BlogsHelper
     end
   end
 
-  # def confirm_new_or_edit
-  #   unless @blog.id?
-  #     blogs_path
-  #   else
-  #     blog_path
-  #   end
+  def confirm_new_or_edit
+    unless @blog.id?
+      blogs_path
+    else
+      blog_path
+    end
 
-  # end
+  end
+
+  def confirm_form_method
+    @blog.id ? 'patch' : 'post'
+    # if @blog.id.nil?
+    #   puts "oooooooooooooooooooo"
+    #   "patch"
+    # else
+    #   puts "nnnnnnnnnnnnnnnnn"
+    #   "post"
+    # end
+  end
 end
